@@ -1,2 +1,2 @@
 # homepage
-A responsive homepage of my portfolio 
+A responsive homepage
