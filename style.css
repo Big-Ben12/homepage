@@ -1,0 +1,392 @@
+:root {
+  --teal: #0f8ca0;
+  --text-dark: #111111;
+  --text-light: #ffffff;
+  --bg-light: #ffffff;
+  --bg-muted: #f4f4f4;
+  --card-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  --soft-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Playfair Display", serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- HEADER (hero) ---------- */
+header {
+  position: relative;
+  background: var(--teal);
+  color: var(--text-light);
+  padding: 5rem 1rem 8rem; 
+  overflow: visible;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3rem;
+  height: 8rem;
+  background: var(--bg-light);
+  transform: skewY(-4deg);
+  transform-origin: top right;
+  z-index: 1;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6rem;
+  height: 8rem;
+  background: var(--bg-light);
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: 1;
+}
+
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-photo {
+  position: relative;
+  flex: 0 0 400px;
+  z-index: 3;
+  margin-right: -1px; /* overlap the about-me card */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--card-shadow);
+  border-radius: 2px;
+}
+
+.profile-photo p {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  color: var(--text-light);
+  font-size: 3.2rem;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  text-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-me {
+  background: var(--bg-light);
+  flex: 0 1 50%;
+  padding: 2.2rem;
+  border-radius: 2px;
+  box-shadow: var(--card-shadow);
+  align-self: center;
+  z-index: 2;
+}
+
+.about-me h3 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: #111111;
+}
+.about-me p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.socials {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.about-me .socials {
+  justify-content: end;
+}
+
+.about-me .socials a {
+  color: inherit;
+  opacity: 0.95;
+}
+
+/* ---------- MAIN ---------- */
+main {
+  max-width: 1200px;
+  margin: 5.25rem auto;
+  padding: 0 1rem;
+}
+main h3 {
+  font-size: 1.9rem;
+  margin: 0 0 1.25rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+.project-item {
+  background: var(--bg-light);
+  box-shadow: var(--soft-shadow);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.project-item-image {
+  height: 160px;
+  background: #b32f2f;
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-family: "Playfair Display", serif;
+}
+.project-item:nth-child(2) .project-item-image {
+  background: #7d6fc3;
+}
+.project-item:nth-child(3) .project-item-image {
+  background: #6b9b63;
+}
+.project-item:nth-child(4) .project-item-image {
+  background: #c86fb8;
+}
+.project-item:nth-child(5) .project-item-image {
+  background: #d99239;
+}
+.project-item:nth-child(6) .project-item-image {
+  background: #4aa6d6;
+}
+
+.project-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-top: 1px solid #eee;
+}
+.project-item-content h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: #222;
+}
+.project-item-content-lnks {
+  display: flex;
+  gap: 0.5rem;
+}
+.project-item-content-desc {
+  padding: 0.9rem 1rem;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--teal);
+  color: var(--text-light);
+  padding: 3.5rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+.contact-info {
+  flex: 1;
+}
+.contact-info .tel, .email {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info span {
+  padding-right: 1rem;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+.contact-info p {
+  color: #dff2f4;
+  margin-bottom: 1rem;
+}
+.contact-info address {
+  font-style: normal;
+  color: #e7f6f7;
+  line-height: 1.6;
+}
+.contact-info a {
+  color: #e7f6f7;
+}
+
+.contact-photo {
+  flex: 0 0 480px;
+}
+.contact-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--card-shadow);
+}
+
+/* ---------- Utilities & responsive ---------- */
+.socials a svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 1000px) {
+  /* move header diagonals up on tablet */
+  header::before {
+    bottom: -1.5rem; /* less negative -> moved up */
+    height: 6rem;
+    z-index: 1;
+  }
+
+  header::after {
+    bottom: -3rem; /* less negative -> moved up */
+    height: 6rem;
+    z-index: 1;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  .profile-photo {
+    flex: 0 0 auto;
+    width: 480px; /* Wider image */
+    height: 480px; /* Control height to be shorter */
+    margin-bottom: -140px; /* Reduced overlap due to shorter height */
+    margin-right: 0;
+    margin-left: -400px;
+    overflow: hidden; /* Ensure image doesn't overflow container */
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while filling container */
+    object-position: center 20%; /* Focus on upper part of image */
+  }
+
+  .profile-photo p {
+    font-size: 2.4rem;
+  }
+
+  .about-me {
+    width: 90%;
+    margin-top: 0;
+    padding: 160px 2.5rem 3rem; /* Increased side padding */
+  }
+
+  .about-me h3 {
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+
+  .profile-photo p {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.6rem;
+    bottom: 0.6rem;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+
+  .about-me .socials {
+    justify-content: flex-start;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-photo {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    margin-top: 2.5rem;
+  }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .profile-photo {
+    width: 100%;
+  }
+  .profile-photo p {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.6rem;
+    bottom: 0.6rem;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+   .about-me h3 {
+    justify-content: center;
+  }
+
+  .about-me .socials, .socials{
+    display: flex;
+    justify-content: center;
+  }
+
+}
