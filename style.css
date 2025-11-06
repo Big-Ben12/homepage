@@ -87,7 +87,7 @@ header::after {
   position: relative;
   flex: 0 0 400px;
   z-index: 3;
-  margin-right: -1px; /* overlap the about-me card */
+  margin-right: -1px; 
 }
 
 .profile-photo img {
@@ -283,15 +283,15 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  /* move header diagonals up on tablet */
+  
   header::before {
-    bottom: -1.5rem; /* less negative -> moved up */
+    bottom: -1.5rem; 
     height: 6rem;
     z-index: 1;
   }
 
   header::after {
-    bottom: -3rem; /* less negative -> moved up */
+    bottom: -3rem; 
     height: 6rem;
     z-index: 1;
   }
@@ -304,19 +304,19 @@ footer {
 
   .profile-photo {
     flex: 0 0 auto;
-    width: 480px; /* Wider image */
-    height: 480px; /* Control height to be shorter */
-    margin-bottom: -140px; /* Reduced overlap due to shorter height */
+    width: 480px; 
+    height: 480px; 
+    margin-bottom: -140px; 
     margin-right: 0;
     margin-left: -400px;
-    overflow: hidden; /* Ensure image doesn't overflow container */
+    overflow: hidden; 
   }
 
   .profile-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio while filling container */
-    object-position: center 20%; /* Focus on upper part of image */
+    object-fit: cover; 
+    object-position: center 20%; 
   }
 
   .profile-photo p {
@@ -326,7 +326,7 @@ footer {
   .about-me {
     width: 90%;
     margin-top: 0;
-    padding: 160px 2.5rem 3rem; /* Increased side padding */
+    padding: 160px 2.5rem 3rem; 
   }
 
   .about-me h3 {
@@ -361,32 +361,74 @@ footer {
 }
 
 @media (max-width: 700px) {
+  /* mobile: stack the profile image on top and overlap the about-me card */
   main {
     margin-top: 2.5rem;
   }
+
   .projects {
     grid-template-columns: repeat(1, 1fr);
   }
-  .profile-photo {
-    width: 100%;
+
+  /* stack header vertically and center content */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
   }
+
+  .profile-photo {
+    width: 92%;
+    max-width: 420px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: -140px; 
+    z-index: 4;
+    overflow: hidden;
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  /* center the name at the bottom of the image on mobile */
   .profile-photo p {
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.6rem;
+    font-size: 2rem;
     bottom: 0.6rem;
     width: auto;
     text-align: center;
     white-space: nowrap;
   }
 
-   .about-me h3 {
-    justify-content: center;
+  /* about-me fills the space under the overlapping image */
+  .about-me {
+    width: 94%;
+    max-width: 760px;
+    margin-top: 0;
+    padding: 160px 1.5rem 2.5rem; 
+    align-self: center;
   }
 
-  .about-me .socials, .socials{
+  .about-me h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .about-me p {
+    text-align: center;
+  }
+
+  .about-me .socials,
+  .socials {
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
   }
 
 }
